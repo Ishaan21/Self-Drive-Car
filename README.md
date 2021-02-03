@@ -34,6 +34,13 @@ Note: I did not build this environment, I used an already coded built copy of th
     +-- The Feedback
     +-- Procedure to Reset AI or Save AI.
 ```
+## How to run this file
+```go
+    1. Clone this repository
+    2. Open the files in an editor suitable to you with the required packages installed.
+    3. Run map.py file.
+    4. Draw roads/obstacles using mouse on the environment in order to train the AI.
+```
 ## Final
 
 <img src = "./assets/testcase1.JPG"   width = 500/ >
