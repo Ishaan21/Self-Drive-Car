@@ -24,4 +24,13 @@ class Network(nn.Module):
         q_values = self.fc2(x)
         return q_values
     
+class ReplayMemory(object):
     
+    def __init__(self, capacity):
+        self.capacity = capacity
+        self.memory = []
+    
+    def push(self, event):
+        self.memory.append(event)
+        if len(self.memory) > self.capacity:
+            del self.memory[0]
