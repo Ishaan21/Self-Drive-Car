@@ -51,4 +51,9 @@ class Dqn():
         self.optimizer = optim.Adam(self.model.parameters(), lr = 0.001)
         self.last_state = torch.Tensor(input_size).unsqueeze(0)
         self.last_action = 0
-        self.last_reward = 0    
+        self.last_reward = 0 
+    
+    def select_action(self, state):
+        probs = F.softmax(self.model(Variable(state, volatile = True))*100) # T=100
+        action = probs.multinomial(1)
+        return action.data[0,0]
