@@ -24,6 +24,7 @@ class Network(nn.Module):
         q_values = self.fc2(x)
         return q_values
     
+
 class ReplayMemory(object):
     
     def __init__(self, capacity):
@@ -38,5 +39,16 @@ class ReplayMemory(object):
     def sample(self, batch_size):
         samples = zip(*random.sample(self.memory, batch_size))
         return map(lambda x: Variable(torch.cat(x, 0)), samples)
+
     
+class Dqn():
     
+    def __init__(self, input_size, nb_action, gamma):
+        self.gamma = gamma
+        self.reward_window = []
+        self.model = Network(input_size, nb_action)
+        self.memory = ReplayMemory(100000)
+        self.optimizer = optim.Adam(self.model.parameters(), lr = 0.001)
+        self.last_state = torch.Tensor(input_size).unsqueeze(0)
+        self.last_action = 0
+        self.last_reward = 0    
