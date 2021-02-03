@@ -16,7 +16,7 @@ On going through different possible projects as a beginner, I came across this a
 ## Building an Environment
 The environment for this is built on Kivy package. You can check the instructions for installing this package [here](https://kivy.org/doc/stable/gettingstarted/installation.html). The environment includes the car, the sand(which will be used to draw different obstacles and even a path for a road) and the three sensors in front of a car. In *map.py* these components are defined and this where the object **brain** of Dqn class in *ai.py* is initialized. 
 
-                                ![Environment](./assets/environment.jpg)
+<img src = "./assets/environment.jpg"   width = 500/ >
 
 Note: I did not build this environment, I used an already coded built copy of this environment but was able to connect to my AI only with basic undeerstanding of the file. 
 
@@ -36,7 +36,7 @@ Note: I did not build this environment, I used an already coded built copy of th
 ```
 ## Final
 
-                                ![Testcase](./assets/testcase1.jpg)
+<img src = "./assets/testcase1.jpg"   width = 500/ >
 
 
 
